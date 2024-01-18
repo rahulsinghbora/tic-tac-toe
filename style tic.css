@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: #334155;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    max-width: 45rem;
+    width: 90%;
+}
+
+.container h1 {
+    font-size: 3.2rem;
+    margin-top: 2em;
+    text-decoration: underline;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(12rem, 1fr));
+}
+
+.cells {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid;
+    padding: 1.2em;
+    font-size: 5rem;
+    font-weight: 700;
+    height: 2.4em;
+    cursor: pointer;
+
+}
+
+.cells:first-child,
+.cells:nth-child(2),
+.cells:nth-child(3) {
+    border-top: 0;
+
+}
+
+.cells:nth-child(3),
+.cells:nth-child(6),
+.cells:nth-child(9) {
+    border-right: 0;
+}
+
+.cells:nth-child(1),
+.cells:nth-child(4),
+.cells:nth-child(7) {
+    border-left: 0;
+}
+
+.cells:nth-child(7),
+.cells:nth-child(8),
+.cells:nth-child(9) {
+    border-bottom: 0;
+}
+
+
+.players {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.players .player {
+    margin-inline: 1em;
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+
+button {
+    font-size: 1.6rem;
+    padding: .4em 1.5em;
+    border-radius: 10%;
+    margin-top: 2em;
+    background-color: orangered;
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(241, 94, 40);
+}
+
+.cells.disabled {
+    background-color: #635a5a;
+}
+
+.alertbox {
+    position: absolute;
+    top: 0;
+    font-size: 3.2rem;
+    width: 14em;
+    padding: .4em;
+    display: none;
+    text-align: center;
+    border: 2px solid;
+}
+
+@media screen and (max-width:552px) {
+    .container h1 {
+        font-size: 2.4rem;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(3, minmax(9rem, 1fr));
+    }
+
+    .cells {
+        height: 3em;
+        font-size: 3rem;
+    }
+
+    .alertbox {
+        font-size: 2.4rem;
+        width: 14em;
+    }
+}
